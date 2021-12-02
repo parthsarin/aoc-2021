@@ -10,3 +10,5 @@
 Day 1 was a solitary adventure, though I hope others will join in soon. Nobody really missed much -- the puzzles today were pretty straightforward and solved entirely in two lines in the interactive interpreter. Only 2,000 lines, so efficiency wasn't a big deal.
 
 A solid start to a hopefully fun holiday season.
+
+— Parth

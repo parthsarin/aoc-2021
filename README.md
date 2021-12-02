@@ -16,4 +16,4 @@ A solid start to a hopefully fun holiday season.
 
 Michael joined in, but Unicornelius was a bit late to the party. Submarine adventures - solved in ~6 mins, at a rank of ~2000. Very impressed by how quickly everyone solves these things.
 
-- Unicornelius (and Michael)
+— Unicornelius (and Michael)

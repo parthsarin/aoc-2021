@@ -130,7 +130,7 @@ def get_puzzle(
 
     if html2text:
         data = html2text.html2text(data)
-        data = re.search('---.*', data, re.DOTALL).group()
+        data = re.search(r'[^\n]+---.*', data, re.DOTALL).group()
     
     return data
 

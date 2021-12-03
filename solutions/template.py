@@ -15,12 +15,12 @@ ans_1 = None
 ans_2 = None
 
 # --- Submission Code ---
-if not os.path.exists(f'../puzzles/day-{day_idx}.txt'):
+if not os.path.exists(f'../puzzles/day-{day_idx}.md'):
     # Level 2 hasn't been generated yet; we're on level 1
     correct = submit(ans_1, level=1)
     if correct:
         puzzle = get_puzzle()
-        with open(f'../puzzles/day-{day_idx}.txt', 'w') as f:
+        with open(f'../puzzles/day-{day_idx}.md', 'w') as f:
             f.write(puzzle)
 else:
     # Level 2 has been generated; we're on level 2

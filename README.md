@@ -25,3 +25,11 @@ We've got a full team by now! Yasmine, Michael, Unicornelius, and Parth are all 
 It all worked out and our rank has been improving: despite 26 minutes on part 2, we got our best rank (1863) so far. Still no leaderboard, but it's possible we'll hit something soon.
 
 — Parth
+
+## Day 4 (189/311)
+Great day! We managed to track sub-400 placements for both part 1 and part 2. We had a lot of success
+today creating a class to represent the `Bingo` board and making use of Python's features. 
+
+The leaderboard is in sight!
+
+— Yasmine

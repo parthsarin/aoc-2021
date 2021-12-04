@@ -187,7 +187,8 @@ def get_rank(
 
 def submit(
         answer: str, level: int, 
-        day: int = day_idx, year: int = year
+        day: int = day_idx, year: int = year,
+        show_rank: bool = False
     ) -> bool:
     """
     Submits the answer for the current day.
@@ -198,6 +199,7 @@ def submit(
     level: The level of the answer.
     day: The day to submit.
     year: The year to submit.
+    show_rank: Whether to show the rank after submission.
 
     Returns
     -------
@@ -227,14 +229,13 @@ def submit(
     
     elif "That's the right answer" in r:
         cprint("Submission successful! ", 'green', end = '')
-        rank = get_rank(day, year)
-        level = int(level)
-        if level == 1:
-            a, b = rank.time_1, rank.rank_1
-        elif level == 2:
-            a, b = rank.time_2, rank.rank_2
-    
-        cprint(f'(took {a} & ranked {b})', 'green')
+        if show_rank:
+            rank = get_rank(day, year)
+            if int(level) == 1:
+                a, b = rank.time_1, rank.rank_1
+            elif int(level) == 2:
+                a, b = rank.time_2, rank.rank_2
+            cprint(f'(took {a} & ranked {b})', 'green')
         return True
     
     elif "That's not the right answer" in r:

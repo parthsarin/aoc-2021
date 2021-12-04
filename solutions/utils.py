@@ -10,7 +10,8 @@ from datetime import date
 import os
 from sys import argv
 import re
-from typing import List
+from typing import List, Union, Tuple
+from collections import namedtuple
 try:
     import termcolor
 except ImportError:
@@ -39,6 +40,8 @@ headers = {
     'Cache-Control': 'max-age=0',
     'TE': 'trailers',
 }
+
+RankInfo = namedtuple('RankInfo', ['time_1', 'rank_1', 'time_2', 'rank_2'])
 
 
 def cprint(
@@ -135,6 +138,53 @@ def get_puzzle(
     return data
 
 
+def get_rank(
+        day: int = day_idx, 
+        year: int = year
+    ) -> Union[None, Tuple[str]]:
+    """
+    Returns the rank for the current day.
+
+    Arguments
+    ---------
+    day -- The day to get the rank for.
+    year -- The year to get the rank for.
+
+    Returns
+    -------
+    The rank for the specified day and time for completion.
+    """
+    # Get the leaderboard ranking
+    r = requests.get(
+        f'https://adventofcode.com/{year}/leaderboard/self',
+        headers=headers, cookies=cookies
+    )
+    data = r.text
+
+    # Parse for the time/rank
+    data = data.replace('&gt;', '>')
+    ranks = re.findall(
+        r'(\d+) +(\d\d:\d\d:\d\d|>24h) +(\d+) +(\d+)( +(\d\d:\d\d:\d\d|>24h) +(\d+) +(\d+))?',
+        data
+    )
+    rank_info = [t for t in ranks if t[0] == str(day)]
+
+    if rank_info:
+        rank_info = rank_info[0]
+    else:
+        return None
+
+    # Reformat and grab the results
+    time_1, rank_1 = rank_info[1:3]
+    time_2, rank_2 = rank_info[5:7]
+    if rank_1:
+        rank_1 = int(rank_1)
+    if rank_2:
+        rank_2 = int(rank_2)
+
+    return RankInfo(time_1, rank_1, time_2, rank_2)
+
+
 def submit(
         answer: str, level: int, 
         day: int = day_idx, year: int = year
@@ -176,7 +226,15 @@ def submit(
         return False
     
     elif "That's the right answer" in r:
-        cprint("Submission successful!", 'green')
+        cprint("Submission successful! ", 'green', end = '')
+        rank = get_rank(day, year)
+        level = int(level)
+        if level == 1:
+            a, b = rank.time_1, rank.rank_1
+        elif level == 2:
+            a, b = rank.time_2, rank.rank_2
+    
+        cprint(f'(took {a} & ranked {b})', 'green')
         return True
     
     elif "That's not the right answer" in r:

@@ -33,3 +33,38 @@ today creating a class to represent the `Bingo` board and making use of Python's
 The leaderboard is in sight!
 
 — Yasmine
+
+## Day 5 (1218/1277)
+
+This was a rough day, just in terms of the solving process (even though our rank went down since last time, I don't think that's a huge mark on progress since it's still monotonic improvement from day 3). We made two big missteps, I think
+
+1. We stored a dictionary mapping points `(x, y)` to the number of times they were visited. Then, we counted the number of times each point was visited more than twice like this:
+
+   ```python
+   ans = 0
+   for k, v in d:
+       if v >= 2:
+           ans += 1 
+   ```
+
+   Super subtle, but do you see the bug? It's just going over `d`, which is `d.keys()` as an iterable, so `k` is the `x` coordinate and `v` is the `y` coordinate. Neither of them are the number of times visited.
+
+2. We (I) read too quickly and didn't realize the lines had slope ±1. This sent us down a rabbithole trying to calculate if a point was on a line with this function:
+
+    ```python
+    def is_on_line(p, x1, x2, y1, y2):
+        x, y = p
+
+        # test entire line
+        m = float(y2 - y1) / float(x2 - x1)
+        b = y1 - m * x1
+        on_line = y == m * x + b
+
+        # in bounds?
+        in_bounds = x1 <= x <= x2 and y1 <= y <= y2
+        return on_line and in_bounds
+    ```
+
+    It was much simpler, and we rerouted quickly.
+
+— Parth

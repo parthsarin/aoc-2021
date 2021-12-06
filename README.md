@@ -68,3 +68,11 @@ This was a rough day, just in terms of the solving process (even though our rank
     It was much simpler, and we rerouted quickly.
 
 — Parth
+
+## Day 6 (417/452)
+
+Today was an adventure in fish breeding. Maybe I should go into fish farming.
+
+Successful day though - onward and upward!
+
+— Michael

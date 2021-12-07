@@ -79,4 +79,8 @@ Successful day though - onward and upward!
 
 ## Day 7 (188/744)
 
+Missing Michael today, though we did go up in rank to achieve our best yet. 
+
+Top 100 is in reach.
+
 — Yasmine

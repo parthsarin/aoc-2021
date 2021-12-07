@@ -76,3 +76,7 @@ Today was an adventure in fish breeding. Maybe I should go into fish farming.
 Successful day though - onward and upward!
 
 — Michael
+
+## Day 7 (188/744)
+
+— Yasmine

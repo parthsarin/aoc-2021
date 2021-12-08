@@ -89,39 +89,41 @@ Top 100 is in reach.
 
 Missing Yasmine today, but we did manage to break the leaderboard! 51 on part 1, answered in just over 3 minutes! Honestly, the problem wasn't too difficult but the reading took a while. I think we managed to just slide in there.
 
-I'm still quite proud of our 617 rank on part 2, where the real substance of the problem was. For each line, we're basically searching for a pairing between the letters "fake" a–g and the "true" letters a–g. We're guaranteed that there is exactly one pairing which works. But, there are $7!$ such pairings. We can't just brute force it, so we're going to use a clever trick.
+I'm still quite proud of our 617 rank on part 2, where the real substance of the problem was. For each line, we're basically searching for a pairing between the letters "fake" a–g and the "true" letters a–g. We're guaranteed that there is exactly one pairing which works. But, there are 7! such pairings. We can't just brute force it, so we're going to use a clever trick.
+
+> **Edit**: Turns out we *could* just brute force it (and most solutions did just that). But we were fancy 😎
 
 We started by reducing the number of pairings based on the length of each number. If the "fake" word has two letters, we can narrow the possible pairings down to those which map those two letters to either `e` or `f`. Applying this, we narrowed the search space considerably—down to 8 dictionaries for each line! 
 
-**Technical detail**: At this point, we were expressing the search space as a dictionary which mapped the fake letters to all possible true letters it could be after the length-pruning. For example, it started as
-
-```python
-candidates = {
-    'a': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'b': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'c': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'd': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'e': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'f': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-    'g': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-}
-```
-
-And then if we saw the word `"ab"` we narrowed to
-
-```python
-candidates = {
-    'a': {'c', 'f'},
-    'b': {'c', 'f'},
-    'c': {'a', 'b', 'd', 'e', 'g'},
-    'd': {'a', 'b', 'd', 'e', 'g'},
-    'e': {'a', 'b', 'd', 'e', 'g'},
-    'f': {'a', 'b', 'd', 'e', 'g'},
-    'g': {'a', 'b', 'd', 'e', 'g'},
-}
-```
-
-(actually we didn't even take out `c`, `f` but that's not important)
+> **Technical detail**: At this point, we were expressing the search space as a dictionary which mapped the fake letters to all possible true letters it could be after the length-pruning. For example, it started as
+> 
+> ```python
+> candidates = {
+>     'a': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'b': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'c': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'd': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'e': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'f': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+>     'g': {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+> }
+> ```
+> 
+> And then if we saw the word `"ab"` we narrowed to
+> 
+> ```python
+> candidates = {
+>     'a': {'c', 'f'},
+>     'b': {'c', 'f'},
+>     'c': {'a', 'b', 'd', 'e', 'g'},
+>     'd': {'a', 'b', 'd', 'e', 'g'},
+>     'e': {'a', 'b', 'd', 'e', 'g'},
+>     'f': {'a', 'b', 'd', 'e', 'g'},
+>     'g': {'a', 'b', 'd', 'e', 'g'},
+> }
+> ```
+> 
+> (actually we didn't even take out `c`, `f` but that's not important)
 
 Finally, we used recursion to get a list of all possible pairings from this search space and... we just tried them! We ran into a sneaky return statement bug which made us rethink life.
 

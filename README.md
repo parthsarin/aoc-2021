@@ -130,3 +130,10 @@ Finally, we used recursion to get a list of all possible pairings from this sear
 We can get the leaderboard again for sure! Or as Michael would say, "straight path to the leaderboard" 😉
 
 — Parth
+
+## Days 9 & 10
+Most of us ended up being unavailable when the puzzle was released (I was in a final on day 9 and then on a plane day 10) so I tidied up the puzzles on my own time. It's way different solving these without any time pressure 😂
+
+Day 9 was a search algorithm, kinda like [the rising tides assignment](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1194/handouts/230%20Assignment%207.pdf) from CS 106B. Day 10 was also 106B-esque, asking us to (essentially) validate a sequence of opening and closing parentheses.
+
+— Parth

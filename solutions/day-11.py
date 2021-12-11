@@ -1,13 +1,12 @@
 """
-File: day-.py
+File: day-11.py
 ---------------
 For Level 1, use the website. For Level 2, use the file puzzles/day-...
 """
-import os
 from utils import *
 
-DAY = ...
-YEAR = ...
+DAY = 11
+YEAR = 2021
 data = get_input(write=True, day=DAY, year=YEAR)
 
 # --- Part 1 ---

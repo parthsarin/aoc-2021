@@ -263,6 +263,35 @@ def submit(
     return r
 
 
+def full_submit(
+        ans_1: str = None, ans_2: str = None,
+        day: int = day_idx, year: int = year,
+        show_rank: bool = False
+    ):
+    """
+    Submits the answers for the current day.
+
+    Arguments
+    ---------
+    ans_1: The answer to submit for level 1.
+    ans_2: The answer to submit for level 2.
+    day: The day to submit.
+    year: The year to submit.
+    show_rank: Whether to show the rank after submission.
+    """
+    if not os.path.exists(f'../puzzles/day-{day}.md'):
+        # Level 2 hasn't been generated yet; we're on level 1
+        correct = submit(ans_1, level=1, day=day, year=year, show_rank=show_rank)
+        if correct:
+            puzzle = get_puzzle(day=day, year=year)
+            with open(f'../puzzles/day-{day}.md', 'w') as f:
+                f.write(puzzle)
+
+    else:
+        # Level 2 has been generated; we're on level 2
+        correct = submit(ans_2, level=2, day=day, year=year, show_rank=show_rank)
+
+
 if __name__ == '__main__':
     if ('--input' in argv) or ('-i' in argv) or ('--get-input' in argv):
         get_input(write = True)

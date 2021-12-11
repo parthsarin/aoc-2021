@@ -8,12 +8,13 @@ from utils import *
 
 DAY = ...
 YEAR = ...
-data = get_input(write=True, day=DAY, year=YEAR)
 
 # --- Part 1 ---
+data = get_input(write=True, day=DAY, year=YEAR)
 ans_1 = None
 
 # --- Part 2 ---
+data = get_input(write=True, day=DAY, year=YEAR)
 ans_2 = None
 
 # --- Submission Code ---

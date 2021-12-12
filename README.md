@@ -137,3 +137,10 @@ Most of us ended up being unavailable when the puzzle was released (I was in a f
 Day 9 was a search algorithm, kinda like [the rising tides assignment](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1194/handouts/230%20Assignment%207.pdf) from CS 106B. Day 10 was also 106B-esque, asking us to (essentially) validate a sequence of opening and closing parentheses.
 
 — Parth
+
+## Day 11 (467/1300)
+Fun problem today—Yasmine's instinct to simulate everything turned out to be perfect. It was computationally efficient, etc etc—totally fine. We made a really stupid mistake though: we didn't reset the `data` variable after part 1, and since part 1 involved 100 steps of the simulation, the answer we got for part 2 was 100 less than the correct answer.
+
+I updated the template so it automatically re-sets the `data` variable for part 2. Hopefully this doesn't catch us again!
+
+— Parth

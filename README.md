@@ -144,3 +144,12 @@ Fun problem today—Yasmine's instinct to simulate everything turned out to be p
 I updated the template so it automatically re-sets the `data` variable for part 2. Hopefully this doesn't catch us again!
 
 — Parth
+
+## Day 12 (315/1085)
+That was a doozy. Part 1 was solid—I just implemented DFS. But my initial approach for part 2 didn't seem to work. I kept track of a dictionary `visited = {node: # times visited}` and checked to make sure I wasn't visiting small nodes more than once...
+
+Oof I just realized what I did wrong: I was allowing myself to visit *any* small cave twice, not a single small cave twice.
+
+Anyways! I reimplemented with a stack because I had no clue what else to do, and kinda accidentally made that fix.
+
+— Parth

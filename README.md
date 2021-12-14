@@ -153,3 +153,8 @@ Oof I just realized what I did wrong: I was allowing myself to visit *any* small
 Anyways! I reimplemented with a stack because I had no clue what else to do, and kinda accidentally made that fix.
 
 — Parth
+
+## Day 13 (824/469)
+Super fun problem today. Kinda like a sequel to lanternfish. I think I got the key insight—to represent a polymer as a dictionary—pretty early, but converting back to the counts for each of the variables was sneaky. I didn't realize at first that the last character of the string always remains the last character. Once I got that, the rest of the code was straightforward.
+
+— Parth

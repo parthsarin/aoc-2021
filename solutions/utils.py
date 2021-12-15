@@ -281,6 +281,9 @@ def full_submit(
     """
     if not os.path.exists(f'../puzzles/day-{day}.md'):
         # Level 2 hasn't been generated yet; we're on level 1
+        if ans_1 is None:
+            cprint('ans_1 is None — skipping submit', 'yellow')
+            return
         correct = submit(ans_1, level=1, day=day, year=year, show_rank=show_rank)
         if correct:
             puzzle = get_puzzle(day=day, year=year)
@@ -289,6 +292,9 @@ def full_submit(
 
     else:
         # Level 2 has been generated; we're on level 2
+        if ans_1 is None:
+            cprint('ans_2 is None — skipping submit', 'yellow')
+            return
         correct = submit(ans_2, level=2, day=day, year=year, show_rank=show_rank)
 
 

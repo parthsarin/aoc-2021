@@ -292,7 +292,7 @@ def full_submit(
 
     else:
         # Level 2 has been generated; we're on level 2
-        if ans_1 is None:
+        if ans_2 is None:
             cprint('ans_2 is None — skipping submit', 'yellow')
             return
         correct = submit(ans_2, level=2, day=day, year=year, show_rank=show_rank)

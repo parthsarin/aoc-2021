@@ -158,3 +158,10 @@ Anyways! I reimplemented with a stack because I had no clue what else to do, and
 Super fun problem today. Kinda like a sequel to lanternfish. I think I got the key insight—to represent a polymer as a dictionary—pretty early, but converting back to the counts for each of the variables was sneaky. I didn't realize at first that the last character of the string always remains the last character. Once I got that, the rest of the code was straightforward.
 
 — Parth
+
+## Day 15 (1148/1447)
+Ooooof this was an annoying puzzle. All of the examples suggested we could only move down and to the right, so I implemented a dynamic programming algorithm but I should have done something more exhaustive—big misstep!
+
+Anyways, it worked out, but the rank definitely suffered.
+
+— Parth

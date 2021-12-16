@@ -3,7 +3,6 @@ File: day-.py
 ---------------
 For Level 1, use the website. For Level 2, use the file puzzles/day-...
 """
-import os
 from utils import *
 
 DAY = ...

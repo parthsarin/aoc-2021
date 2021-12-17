@@ -1,7 +1,7 @@
 # [Advent of Code, 2021](https://adventofcode.com/2021)
 
-![](https://img.shields.io/badge/day%20📅-15-blue)
-![](https://img.shields.io/badge/stars%20⭐-29-yellow)
+![](https://img.shields.io/badge/day%20📅-16-blue)
+![](https://img.shields.io/badge/stars%20⭐-30-yellow)
 
 ## Day 1 (7918/6466)
 

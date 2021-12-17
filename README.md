@@ -165,3 +165,10 @@ Ooooof this was an annoying puzzle. All of the examples suggested we could only 
 Anyways, it worked out, but the rank definitely suffered.
 
 — Parth
+
+## Day 16 (971/1460)
+Today was a lot of fun! Parsing extravaganza :). But a huge part of the code depended on accurately counting the length of different packets in the BITS transmission and I forgot to increment by one at one point, which threw off a huge piece of logic.
+
+I think the decision to keep track of the packets as `namedtuples` with nested payloads was huge, though!
+
+— Parth

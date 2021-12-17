@@ -172,3 +172,13 @@ Today was a lot of fun! Parsing extravaganza :). But a huge part of the code dep
 I think the decision to keep track of the packets as `namedtuples` with nested payloads was huge, though!
 
 — Parth
+
+## Day 17 (361/202)
+First day joining! Super fun -- we implemented several small useful functions and worked on brute forcing a solution
+for maximum height that was reached, which may have caused our rank to suffer for part 1, but definitely helped for part 2,
+where we simply modified our numbers to get the total number of solutions! 
+
+We could have picked more optimal bounds for x and y to ensure faster compute, as well as choose better conditions for max,
+return values, and loop conditions to ensure covering all solutions without computing unnecessarily.
+
+— Bhagirath

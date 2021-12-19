@@ -189,3 +189,10 @@ Wow, what a doozy today. I think the problem itself wasn't super inherently chal
 Fun problem, though! And I'm super proud of our progress!
 
 — Parth
+
+## Day 19 (649/537)
+I took a different approach than the norm, it seems. To find the overlapping points between each scanner, I computed internal distances and then found the twelve points which were clustered similarly between scanners. Then, I later had to recover the orientation and position of the scanners from the points.
+
+Other people tried all orientations and positions (represented as offsets between points) and just accepted the ones which worked. Then, they immediately converted all of the points into the new representation. I think my approach is more elegant, but took a bit longer to code up!
+
+— Parth

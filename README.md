@@ -182,3 +182,10 @@ We could have picked more optimal bounds for x and y to ensure faster compute, a
 return values, and loop conditions to ensure covering all solutions without computing unnecessarily.
 
 — Bhagirath
+
+## Day 18 (1277/1153)
+Wow, what a doozy today. I think the problem itself wasn't super inherently challenging, but there were a few missteps that led to us taking a long time on it. First, we took a while to read the problem statement and to understand all of the different ways the input was modified. Second, we decided to represent the data as both a list and a tree, but we kept flipping back and forth—I'm honestly not sure if this was a minor inconvenience that just felt major or if it was a bigger deal. We also ended up having lots of helper functions—they were just everywhere! Random helper functions to find a certain element or traverse a certain path, etc etc.
+
+Fun problem, though! And I'm super proud of our progress!
+
+— Parth

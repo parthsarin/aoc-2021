@@ -196,3 +196,10 @@ I took a different approach than the norm, it seems. To find the overlapping poi
 Other people tried all orientations and positions (represented as offsets between points) and just accepted the ones which worked. Then, they immediately converted all of the points into the new representation. I think my approach is more elegant, but took a bit longer to code up!
 
 — Parth
+
+## Day 20 (143/104)
+T'was nice to have a break with this problem. I think the theme of this competition has been that, when there are problems with indices, it can be helpful to store the "active" indices in a set instead of keeping track of the entire structure and indexing into it.
+
+Especially when the structure is infinite.
+
+— Parth
